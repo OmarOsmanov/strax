@@ -1,0 +1,22 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="servisCategory" asp-action="update" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Name" class="form-label">Name</label>
+                    <input class="form-control" asp-for="@Model.Name">
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+                <input asp-for="@Model.Id" hidden />
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
